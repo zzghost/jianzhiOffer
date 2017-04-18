@@ -18,7 +18,7 @@ public class DuplicateNumber2 {
 		}
 		return rst;
 	}
-	//解法2：书上的代码不能找出所有的重复数字。我觉得不是很好。改编他的代码，这里利用二分查找+分治的思想。
+	//解法2：书上的代码不能找出所有的重复数字。改编他的代码，这里利用分治，在某个范围内数字的个数和重复数字有关系。
 	//时间复杂度O(nlogn)，空间复杂度O(1)
 	public static int rangeCount(int[] numbers, int start){
 		int count = 0;
