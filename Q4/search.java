@@ -4,6 +4,7 @@ package jianzhiOffer;
  * 一个二维数组和一个整数，判断数组中是否含有该整数
  */
 public class search {
+//解法：从右上角开始检索。若n等于右上角数m，则返回；若n大于m，则在这一列里找；否则在前面的列同一行找
 public static boolean find(int[][] nums, int n){
 	boolean rst = false;
 	int row = nums.length;
