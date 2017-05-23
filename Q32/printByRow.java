@@ -5,7 +5,7 @@
 //解法：仍然是层次遍历，可以增加一个哨兵节点；也可以数出每一行的节点个数。
 
 public class Solution {
-	ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+    ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
 		ArrayList<ArrayList<Integer>> finalList = new ArrayList<ArrayList<Integer>>();
 		if(pRoot == null)
 			return finalList;
