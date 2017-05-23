@@ -6,31 +6,31 @@
 
 public class Solution {
     ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
-		ArrayList<ArrayList<Integer>> finalList = new ArrayList<ArrayList<Integer>>();
-		if(pRoot == null)
-			return finalList;
-		java.util.Queue<TreeNode> queue = new java.util.LinkedList<TreeNode>();
-		TreeNode flag = new TreeNode(0);
-		queue.offer(pRoot);
-		queue.offer(flag);
-		ArrayList<Integer> aList = new ArrayList<Integer>();
-		while(queue.size() >= 2){
-			TreeNode curr = queue.poll();
-			if(curr.val == 0){
-				queue.offer(flag);
-				finalList.add(aList);
-				aList = new ArrayList<Integer>();
-			}
-			else{
-				aList.add(curr.val);
-				if(curr.left != null)
-					queue.offer(curr.left);
-				if(curr.right != null)
-					queue.offer(curr.right);
-			}
-		}
-		finalList.add(aList);
-		return finalList;
-	}
+        ArrayList<ArrayList<Integer>> finalList = new ArrayList<ArrayList<Integer>>();
+        if(pRoot == null)
+            return finalList;
+        java.util.Queue<TreeNode> queue = new java.util.LinkedList<TreeNode>();
+        TreeNode flag = new TreeNode(0);
+        queue.offer(pRoot);
+        queue.offer(flag);
+        ArrayList<Integer> aList = new ArrayList<Integer>();
+        while(queue.size() >= 2){
+            TreeNode curr = queue.poll();
+            if(curr.val == 0){
+                queue.offer(flag);
+                finalList.add(aList);
+                aList = new ArrayList<Integer>();
+            }
+            else{
+                aList.add(curr.val);
+                if(curr.left != null)
+                    queue.offer(curr.left);
+                if(curr.right != null)
+                    queue.offer(curr.right);
+            }
+        }
+        finalList.add(aList);
+        return finalList;
+    }
 
 }
