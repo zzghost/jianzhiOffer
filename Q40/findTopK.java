@@ -23,40 +23,40 @@ public class Solution1 {
     }
 }
 import java.util.ArrayList;
- 
+
 public class Solution2 {
-        public int partition(int[] input, int start, int end){
-                    int first = input[start];
-                            while(start < end){
-                                            while(input[end] > first && end > start) end--;
-                                                        if(end > start)
-                                                                            input[start++] = input[end];
-                                                                    while(input[start] < first && end > start) start++;
-                                                                                if(end > start)
-                                                                                                    input[end--] = input[start];
-                                                                                        }
-                                    input[start] = first;
-                                            return start;
-                                                }
-            public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
-                        java.util.ArrayList<Integer> aList = new java.util.ArrayList<Integer>();
-                                if(k == 0 || input == null || input.length == 0 || input.length < k) return aList;
-                                        int start = 0, end = input.length - 1;
-                                                int idx = partition(input, start, end);
-                                                        while(idx != k - 1){
-                                                                        if(idx > k - 1){
-                                                                                            end = idx - 1;
-                                                                                                            idx = partition(input, start, end);
-                                                                                                                        }
-                                                                                    else{
-                                                                                                        start = idx + 1;
-                                                                                                                        idx = partition(input, start, end);
-                                                                                                                                    }
-                                                                                            }
-                                                                for(int i = 0; i < k; i++)
-                                                                                aList.add(input[i]);
-                                                                        return aList;
-                                                                            }
+    public int partition(int[] input, int start, int end){
+        int first = input[start];
+        while(start < end){
+            while(input[end] > first && end > start) end--;
+            if(end > start)
+                input[start++] = input[end];
+            while(input[start] < first && end > start) start++;
+            if(end > start)
+                input[end--] = input[start];
+        }
+        input[start] = first;
+        return start;
+    }
+    public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
+        java.util.ArrayList<Integer> aList = new java.util.ArrayList<Integer>();
+        if(k == 0 || input == null || input.length == 0 || input.length < k) return aList;
+        int start = 0, end = input.length - 1;
+        int idx = partition(input, start, end);
+        while(idx != k - 1){
+            if(idx > k - 1){
+                end = idx - 1;
+                idx = partition(input, start, end);
+            }
+            else{
+                start = idx + 1;
+                idx = partition(input, start, end);
+            }
+        }
+        for(int i = 0; i < k; i++)
+            aList.add(input[i]);
+        return aList;
+    }
 }
 public class Solution3 {
     public int partition(int[] input, int start, int end){
